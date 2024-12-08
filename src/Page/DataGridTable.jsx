@@ -8,7 +8,7 @@ const DataGridTable = () => {
 
   useEffect(() => {
     // Fetch submitted data from the backend
-    axios.get('http://localhost:8080/api/submit').then((res) => {
+    axios.get('https://form-task-be.onrender.com/api/submit').then((res) => {
       setRows(res.data);
     });
   }, []);

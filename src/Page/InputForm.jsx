@@ -34,7 +34,7 @@ const InputForm = () => {
   // Fetch countries on component mount
   useEffect(() => {
     axios
-      .get('http://localhost:8080/api/countries')
+      .get('https://form-task-be.onrender.com/api/countries')
       .then((res) => setCountries(res.data))
       .catch((err) => console.error('Error fetching countries:', err));
   }, []);
@@ -47,13 +47,13 @@ const InputForm = () => {
       setStates([]);
       setCities([]);
       axios
-        .get(`http://localhost:8080/api/states/${value}`)
+        .get(`https://form-task-be.onrender.com/api/states/${value}`)
         .then((res) => setStates(res.data))
         .catch((err) => console.error('Error fetching states:', err));
     } else if (name === 'state') {
       setCities([]);
       axios
-        .get(`http://localhost:8080/api/cities/${value}`)
+        .get(`https://form-task-be.onrender.com/api/cities/${value}`)
         .then((res) => setCities(res.data))
         .catch((err) => console.error('Error fetching cities:', err));
     }
@@ -110,7 +110,7 @@ const InputForm = () => {
     if (validate()) {
       // Simulate API submission
       axios
-        .post('http://localhost:8080/api/submit', formData)
+        .post('https://form-task-be.onrender.com/api/submit', formData)
         .then((res) => {
           console.log('Form submitted successfully:', res.data);
           alert('Form submitted successfully!');
